@@ -3,7 +3,7 @@
     <div class="box">
       <div class="title">LOGIN</div>
 
-      <!-- Login Inputs -->
+      <!-- 로그인 -->
       <div class="input">
         <input
           type="email"
@@ -27,7 +27,7 @@
         <span class="spin"></span>
       </div>
 
-      <!-- Action Buttons -->
+      <!-- 작용버튼들임 -->
       <div class="button">
         <button @click="handleLogin">LOGIN</button>
       </div>
@@ -35,7 +35,7 @@
         <button @click="$router.push({ name: 'Register' })">Register</button>
       </div>
 
-      <!-- Error Message Display -->
+      <!-- 로그인에러  -->
       <div class="error" v-if="errorMessage">{{ errorMessage }}</div>
 
       <a href="#" class="pass-forgot">Forgot your password?</a>
@@ -116,59 +116,60 @@ export default {
   letter-spacing: 2px;
   color: #003a9a;
   position: relative;
-
-  &:before {
-    content: "";
-    width: 5px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: -50px;
-    background: #003a9a;
-  }
 }
 
 .input {
   margin-top: 30px;
   position: relative;
   width: 100%;
+}
 
-  input {
-    position: relative;
-    height: 60px;
-    top: 10px;
-    border: none;
-    background: transparent;
-    font-family: "Roboto", sans-serif;
-    font-size: 24px;
-    color: rgba(0, 0, 0, 0.8);
-    font-weight: 300;
-  }
+.input input {
+  position: relative;
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 300;
+}
 
-  span.spin {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: #003a9a;
-    z-index: 4;
-    width: 0;
-  }
+.input span.spin {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #003a9a;
+  z-index: 4;
+  width: 0;
 }
 
 .button {
   margin-top: 30px;
+}
 
-  button {
-    width: 100%;
-    line-height: 64px;
-    background-color: transparent;
-    border: 3px solid rgba(0, 0, 0, 0.1);
-    font-weight: 900;
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.2);
-  }
+.button button {
+  width: 100%;
+  line-height: 64px;
+  background-color: transparent;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  font-weight: 900;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s, transform 0.1s;
+  cursor: pointer;
+}
+
+.button button:hover {
+  background-color: #003a9a;
+  color: #fff;
+}
+
+.button button:active {
+  transform: scale(0.95);
 }
 
 .material-button,
