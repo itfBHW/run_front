@@ -5,3 +5,5 @@ steps:
   args: ['push', 'gcr.io/destinyapp-423204/run-front']
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['run', 'deploy', 'run-front', '--image', 'gcr.io/destinyapp-423204/run-front', '--region', 'asia-east1', '--platform', 'managed', '--allow-unauthenticated']
+options:
+  logging: CLOUD_LOGGING_ONLY
