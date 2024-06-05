@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/destinyapp-423204/run-front', '-f', 'Dockerfile', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/destinyapp-423204/run-front']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'run-front', '--image', 'gcr.io/destinyapp-423204/run-front', '--region', 'asia-east1', '--platform', 'managed', '--allow-unauthenticated']
