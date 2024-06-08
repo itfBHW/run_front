@@ -15,7 +15,7 @@ FROM node:lts-alpine as production-stage
 WORKDIR /app
 
 COPY --from=build-stage /app/dist ./dist
-
+COPY --from=build-stage /app/server.js ./server.js
 COPY package*.json ./
 
 RUN npm ci --only=production
